@@ -1,0 +1,31 @@
+.header {
+    font-family: monospace, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: papayawhip;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: 900;
+    color: tomato;
+    background: #fff;
+    padding: 4px 32 px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 1em;
+}
+
+a {
+    font-size: 22px;
+    background: #fff;
+    padding: 8px;
+    text-decoration: none;
+}
