@@ -68,6 +68,6 @@ button {
     padding: 8px 16px;
 }
 
-/* div {
+div.content {
     border: 1px solid #000;
-} */
+}
