@@ -283,3 +283,90 @@ switch (q) {
 
 
 
+function checkAge(age){
+    return (age > 18) ? true : confirm('Do you have your parents permission?');
+}
+
+
+function checkAge2(age){
+    return (age > 18) || confirm('Did parents allow you?');
+}
+
+
+
+
+function min(a, b){
+    if (a < b){
+        return a;
+    } else {
+        return b;
+    }
+    
+}
+
+
+function min2(a, b){
+    return (a < b) ? a : b;
+}
+
+
+
+
+function max(a, b, c){
+    if (a >= b && a >= c){
+        return a;
+    } else if (b >= a && b >= c){
+        return b;
+    } else if (c >= a && c >= b){
+        return c;
+    } else {
+        return a;
+    }
+}
+
+
+function max(a, b, c){
+    return (a >= b && a >= c) ? a :
+    (b >= a && b >= c) ? b:
+    (c >= a && c >= b) ? c : a;
+}
+
+
+
+
+function pow(a, b){
+    let result = a ** b;
+    return result;
+}
+
+
+
+
+function ask(question, yes no){
+    if (confirm(question)) yes();
+    else no()
+}
+
+ask(
+    'Do you agree?',
+    function() {alert('You agreed.'); },
+    function() {alert('You canceled the execution.'); }
+);
+
+
+// CLEAN VERSION WITH USE OF ARROW FUNCTIONS
+
+function ask2(question, yes, no){
+    if (confirm(question)) yes();
+    else no();
+}
+
+ask2(
+    'Do you agree?';
+    () => alert('You agreed.'),
+    () => alert('You canceled the execution.')
+);
+
+
+
+
