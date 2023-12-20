@@ -342,7 +342,7 @@ function pow(a, b){
 
 
 
-function ask(question, yes no){
+function ask(question, yes, no){
     if (confirm(question)) yes();
     else no()
 }
