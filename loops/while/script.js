@@ -21,5 +21,25 @@
 const cats = ["Pete", "Biggles", "Jasmine"];
 
 const paraCats = document.querySelector("#paraCats");
+const btn = document.querySelector("button");
+const para = document.querySelector("#para");
 
-paraCats = cats.toString();
+paraCats.textContent = cats.join(", ");
+
+let i = 0;
+
+while (i < (cats.length)) {
+    let cat = cats[i].toString();
+    
+    btn.addEventListener("click", () => {
+        if (i = cats.length -1){
+            para.textContent += `${cat}.`;
+        }
+        else {
+            para.textContent += `${cat}, `;
+        }
+    })
+
+    i++;
+    console.log(i);
+};
