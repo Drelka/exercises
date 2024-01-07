@@ -33,4 +33,4 @@ while (i < people.length){
     i++;
 }
 
-commaToFullStop();
+commaToFullStop(); // puts 'period' instead of 'space + comma' after the last item
