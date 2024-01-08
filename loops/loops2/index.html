@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8"/>
+    <title>Loops: Task 2</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+    p {color: purple; margin: 0.5em 0;}
+    * {box-sizing: border-box;}
+    </style>
+</head>
+
+<body>
+    
+    <section class="preview"> </section>
+
+</body>
+
+<script>
+
+    const phonebook = [
+        { name : 'Chris', number : '1549' },
+        { name : 'Li Kang', number : '9634' },
+        { name : 'Anne', number : '9065' },
+        { name : 'Francesca', number : '3001' },
+        { name : 'Mustafa', number : '6888' },
+        { name : 'Tina', number : '4312' },
+        { name : 'Bert', number : '7780' },
+        { name : 'Jada', number : '2282' },
+    ]
+    
+    const name = 'Mustafa';
+    const para = document.createElement('p');
+
+    let i = 0;
+
+    let usersSearch = prompt("Search the phonebook: ", "Mustafa");
+    
+    for (i ; i < phonebook.length ; i++) {
+        if (phonebook[i].name.toLocaleLowerCase() === usersSearch.toLowerCase()){
+            let singleSearch = document.createElement("li");
+            singleSearch.textContent = `${phonebook[i].name} : ${phonebook[i].number}`;
+            para.appendChild(singleSearch);
+            break;
+        }
+    }
+
+
+    const section = document.querySelector('section');
+    section.appendChild(para);
+
+</script>
+
+</html>
+
+<!-- 
+
+    given a name, search an array of objects
+if an object is found
+    output a name + phone number into para
+        then exits the loop (before it has run its course)
+ 
+(use a loop that is different from "for (item of items)" -last exercise )
+
+-->
