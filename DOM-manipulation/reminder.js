@@ -1,48 +1,61 @@
-// const div = document.createElement("div");
-// // creates new element in the memory
+/*
 
-// parentNode.appendChild(childNode);
-// //appends to the parentNode as the last child
+The script element should go into the head and should include:
+- src attribute with the path to the file,
+- "defer" word (odroczyc, przesunac w czasie, wstrzymac)
+  that will cause the script.js to wait and load AFTER the html has been loaded.
+    (this prevents errors resulting from script.js trying to
+    access html elements that has not been loaded yet).
 
-// parentNode.insertBefore(newNode, referenceNode)
-// // inserts newNode into parentNode, before referenceNode
+example:    <script src="my-js-file.js" defer></script>
 
-// parentNode.removeChild(child)
-// // removes child from parentNode on the DOM
-// // also returns a reference to the child
+*/
 
+const div1 = document.createElement("div");
+// creates new element in the memory
 
-// const div = document.createElement("div");
-// // new div referenced element in the variable "div"
+parentNode.appendChild(childNode);
+//appends to the parentNode as the last child
 
-// div.style.color = "blue"    // adds color style rule
-// div.style.cssText = "color: black; background: green;";     // adds several style rules
-// div.setAttribute("style", "color: black; background: green;");  // same as above
+parentNode.insertBefore(newNode, referenceNode)
+// inserts newNode into parentNode, before referenceNode
 
-
-// // when accesing kebab-case CSS rules (dashes-instead-of-spaces) you need to:
-// // use camelCase or bracket notation, see examples below:
-// div.style.backgroundColor;
-// div.style["background-color"];
-// // or:
-// div.style.cssText = "background-color: white";
+parentNode.removeChild(child)
+// removes child from parentNode on the DOM
+// also returns a reference to the child
 
 
-// // THIS ONE DOESN'T WORK, DON'T USE:
-// // div.style.background-color
-// // attempts to substract color from div.style.background only!
+const div = document.createElement("div");
+// new div referenced element in the variable "div"
+
+div.style.color = "blue"    // adds color style rule
+div.style.cssText = "color: black; background: green;";     // adds several style rules
+div.setAttribute("style", "color: black; background: green;");  // same as above
 
 
-// div.setAttribute("id", "theDiv");   // creates/updates id
-// div.getAttribute("id");           // returns id
-// div.removeAttribute("id");       // removes specified attribute
+// when accesing kebab-case CSS rules (dashes-instead-of-spaces) you need to:
+// use camelCase or bracket notation, see examples below:
+div.style.backgroundColor;
+div.style["background-color"];
+// or:
+div.style.cssText = "background-color: white";
 
 
-// div.classList.add("new");   // adds class "new" to to div
-// div.classList.remove("new");   // removes class "new"
-// div.classList.toggle("active");   // if it has a class named "active" -remove; if hasn't -add
+// THIS ONE DOESN'T WORK, DON'T USE:
+// div.style.background-color
+// attempts to substract color from div.style.background only!
 
-// div.textContent = "Hello people!"; // inserts text into div
 
-// div.innerHTML = "<span> Hello people! </span>" // renders HTML inside div
+div.setAttribute("id", "theDiv");   // creates/updates id
+div.getAttribute("id");           // returns id
+div.removeAttribute("id");       // removes specified attribute
+
+
+div.classList.add("new");   // adds class "new" to to div
+div.classList.remove("new");   // removes class "new"
+div.classList.toggle("active");   // if it has a class named "active" -remove; if hasn't -add
+
+div.textContent = "Hello people!"; // inserts text into div
+
+div.innerHTML = "<span> Hello people! </span>" // renders HTML inside div
 

@@ -1,48 +1,34 @@
-const div = document.createElement("div");
-// creates new element in the memory
+const container = document.querySelector("#container");
+container.style.border = "5px solid pink";
+container.style.borderBottom = "5px solid red";
 
-parentNode.appendChild(childNode);
-//appends to the parentNode as the last child
+const content = document.createElement("div");
+content.classList.add("content");
+content.textContent = "This is the text content inside the div. Yeah.";
+container.appendChild(content);
 
-parentNode.insertBefore(newNode, referenceNode)
-// inserts newNode into parentNode, before referenceNode
+const before = document.createElement("p");
+before.classList.toggle(".before");
+before.textContent = "paragraph inserted before div";
+before.style.cssText = "font-size: 20px; color: white; background-color: black; padding-left: 5em";
+before.style.fontWeight = "bold";
+container.insertBefore(before, content);
 
-parentNode.removeChild(child)
-// removes child from parentNode on the DOM
-// also returns a reference to the child
+const removeBtn = document.querySelector(".removeChild");
+removeBtn.style.padding = "20px";
+removeBtn.style.marginLeft = "10px";
+removeBtn.style["background-color"] = "lime"
+content.appendChild(removeBtn);
 
+removeBtn.addEventListener("click", () => { container.removeChild(content); });
 
-const div = document.createElement("div");
-// new div referenced element in the variable "div"
+const addBtn = document.querySelector(".addChild");
+addBtn.style.cssText = "color: yellow; background-color: red"
+addBtn.style.padding = "10px";
 
-div.style.color = "blue"    // adds color style rule
-div.style.cssText = "color: black; background: green;";     // adds several style rules
-div.setAttribute("style", "color: black; background: green;");  // same as above
+addBtn.addEventListener("click", () => { container.appendChild(content); });
 
-
-// when accesing kebab-case CSS rules (dashes-instead-of-spaces) you need to:
-// use camelCase or bracket notation, see examples below:
-div.style.backgroundColor;
-div.style["background-color"];
-// or:
-div.style.cssText = "background-color: white";
-
-
-// THIS ONE DOESN'T WORK, DON'T USE:
-// div.style.background-color
-// attempts to substract color from div.style.background only!
-
-
-div.setAttribute("id", "theDiv");   // creates/updates id
-div.getAttribute("id");           // returns id
-div.removeAttribute("id");       // removes specified attribute
-
-
-div.classList.add("new");   // adds class "new" to to div
-div.classList.remove("new");   // removes class "new"
-div.classList.toggle("active");   // if it has a class named "active" -remove; if hasn't -add
-
-div.textContent = "Hello people!"; // inserts text into div
-
-div.innerHTML = "<span> Hello people! </span>" // renders HTML inside div
-
+const listElement = document.createElement("li");
+listElement.innerText = "This button removes itself too, because he's a child of the div it's removing." +
+                        "It's also removing me, <li>, it's child."
+removeBtn.appendChild(listElement);
