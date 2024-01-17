@@ -19,13 +19,42 @@
 </script>
 
     <!-- method 3 -->
-<button id="btn3">3</button>
+<button id="btn3">CLICK ME! ME! ME!</button>
 
 <script>
     const btn3 = document.querySelector("#btn3");
-    btn3.addEventListener("click",  () => {
-        alert("Hello World! -3")
-    })
+
+    function alertFunction(){
+        alert("Yay! You clicked me!");
+    }
+
+    btn3.addEventListener("click", function (e) {
+        e.target.style.background = "black";
+        e.target.style.color = "white";
+        // console.log(e.target);
+    });
+    
+    // btn3.addEventListener("click", alertFunction);
+
+    // btn3.onclick = alertFunction;
+
+    // btn3.addEventListener("click",  () => {
+    //     alert("Hello World! -3")
+    // })
+</script>
+
+<button id="1">one</button>
+<button id="2">two</button>
+<button id="3">three</button>
+
+<script>
+    const buttons = document.querySelectorAll("button");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            alert(button.id);
+        });
+    });
 </script>
 
 </body>
