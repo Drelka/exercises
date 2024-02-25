@@ -93,7 +93,28 @@ function multiplyNumeric() {
     }
 }
 multiplyNumeric();
+console.log("");
 
 
+
+person = {
+    name: ["Bob", "Smith"],
+    age: 32,
+}
+
+function logProp(propName) {
+    console.log(person[propName]);
+}
+
+logProp("name");
+logProp("age");
+console.log("");
+
+person.age = 45;
+person["name"]["last"] = "Cratchit";
+
+logProp("name");
+logProp("age");
+console.log("");
 
 
