@@ -1,0 +1,96 @@
+body div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+div > div > div + div {
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+div > .div3 > div:nth-child(2) {
+    margin: 30px;
+    box-shadow:  0px 0px 15px 10px green,
+        inset 0px 0px 15px 10px blue;
+}
+
+div > ul {
+    border: 3px dotted red;
+    margin: 10px;
+}
+
+div > ul ~ ul {
+    border: 7px double #abc;
+}
+
+.div3 ul > li:first-child {
+    padding: 10px;
+    border: 1px solid saddlebrown;
+}
+
+.div3 .ul1 > li:nth-child(-2n +7) {
+    background-color: yellow;
+}
+
+.ul2 li ~ li{
+    box-shadow: 5px 5px 10px black;
+}
+
+a {
+    /* color: violet; */
+    text-transform: capitalize;
+    cursor: crosshair;
+    color: firebrick;
+    padding: 10px;
+}
+
+a:hover {
+    text-shadow: -1px 0 black;
+    text-decoration: none;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+}
+
+.main > div:nth-child(odd) > button {
+    background-color: black;
+    color: lightgrey;
+    cursor: grab;
+}
+
+.main > div:nth-child(even) > button:hover {
+    background-color: red;
+}
+
+.main > div:nth-child(odd) > button:hover {
+    background-color: white;
+    color: black;
+}
+
+.div1,
+.div2,
+.div3,
+.div4,
+.div5 {
+    display: flex;
+    flex-direction: row;
+}
+
+.div3 .extra-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.div3::before {
+    content: '😎 🥸 🤓';
+    padding: 10px;
+}
+
+.div3::after {
+    content: '😎 🥸 🤓';
+    padding: 10px;
+}
