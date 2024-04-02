@@ -1,22 +1,32 @@
 body {
-    height: 500vh;
+    height: 330vh;
     margin: 0;
-    display: flex;
-    flex-direction: row;
-}
-
-#right{
     display: flex;
     flex-direction: column;
 }
 
-#measure {
-    position: fixed;
-    background-image: linear-gradient(to bottom right, red, yellow);
-    height: 300vh;
-    width: 200px;
+#middle{
+    display: flex;
+    flex-direction: column;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+#measure1,
+#measure2 {
+    position: absolute;
+    background-image: linear-gradient(to bottom, red, green, yellow, blue, pink, orange, 
+                                      lightblue, midnightblue, brown, lime, slategrey);
+    height: 240vh;
+    width: 300px;
+}
+
+#measure1{
     left: 0;
-    
+}
+
+#measure2{
+    right: 0;
 }
 
 div {
@@ -25,22 +35,20 @@ div {
 
 .d1 div {
     position: sticky;
-    width: 60%;
+    width: 70%;
     height: calc(90% - 5em);
     padding: 0;
     top: 0;
     bottom: 0;
     margin: auto;
-    /* padding-top: 0.5em; */
     border: 0px solid transparent;
     border-radius: 50%;
 }
 
 .d1 {
-    position: relative;
     height: 120vh;
     background-color: red;
-    width: 100vw;}
+}
 .d2 {background-color: green;}
 .d3 {background-color: yellow;}
 .d4 {background-color: blue;}
@@ -50,7 +58,6 @@ div {
 .d8 {background-color: midnightblue;}
 
 .a1 div {
-    /* position: sticky; */
     border-collapse: initial;
     width: 60%;
     height: calc(90% - 80px);
@@ -63,7 +70,7 @@ div {
 
 .a1 {
     position: relative;
-    height: 100vh;
+    height: 120vh;
     background-color: rgb(255, 0, 85);}
 .a2 {background-color: rgb(255, 102, 0);}
 .a3 {background-color: rgb(94, 100, 179);}
