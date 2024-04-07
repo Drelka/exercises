@@ -1,0 +1,144 @@
+:root {
+    --small-border: 3px solid red;
+    --small-gradient-down: linear-gradient(180deg, white, red);
+    --small-gradient-right: linear-gradient(270deg, black, white);
+    --text: lime;
+    --text-shadow: 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red, 0 0px 1rem red;
+    --small-font-size: min(20px, 100px);
+    --font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    --font-weight: 700; 
+}
+
+.outer {
+    font-family: var(--font);
+    font-weight: var(--font-weight);
+    flex-direction: column;
+    height: calc(100vh - 50px);
+    width: calc(100vw - 50px);
+    padding: 10px;
+    align-items: stretch;
+    margin: auto;
+    text-align: center;
+    padding-top: 0;
+    gap: 15px;
+    align-self: stretch;
+}        
+
+p {
+    color: yellow;
+    position: absolute;
+    margin: 0;
+    top: 5px;
+    left: 20px;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    border-radius: 15px;
+    flex: 1;
+}    
+
+.outer > div {
+    position: relative;
+    padding: 30px 10px 10px;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.outer > div > div {
+    color: var(--text);
+    text-shadow: var(--text-shadow);
+    font-size: var(--small-font-size);
+}
+
+.inner1{
+    background-color: color-mix(in srgb, red 50%, yellow 50%);
+}
+
+.inner2{
+    background: linear-gradient(150deg, black, white);
+}
+
+.inner3{
+    background: var(--small-gradient-down);
+}
+
+.inner4{
+    background-color: darkkhaki;
+}
+
+.inner5{
+    background: var(--small-gradient-right)
+}
+
+.inner1-1{
+    background-color: aquamarine;
+    flex: 0.3;
+}
+
+.inner1-2{
+    background-color: azure;
+    flex: 0.5;
+}
+
+.inner1-3{
+    background-color: aquamarine;
+    flex: 0.7;;
+}
+
+.inner1-4{
+    background-color: violet;
+    flex: 0.9;
+}
+
+.inner1-5{
+    background-color: coral;
+    flex: 1.1;
+}
+
+.inner2 > div{
+    background-color: tomato;
+}
+
+.inner3 div:nth-child(2n){
+    background-color: yellow;
+    flex: 100px;
+    text-wrap: nowrap;
+}
+
+.inner3 div:nth-child(3){
+    background-color: deeppink;
+}
+
+.inner3 div:nth-child(5){
+    background-color: rgb(69, 199, 123);
+}
+
+.inner4 div:nth-child(even),
+.inner5 div:nth-child(even){
+    background-color: darkgoldenrod;
+    flex: 0.5;
+}
+
+.inner4 div:nth-child(odd),
+.inner5 div:nth-child(odd){
+    background-color: wheat;
+}
+
+.inner4 > div {
+    position: relative;
+}
+
+.special {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    align-self: stretch;
+    height: 40%;
+    width: 40%;
+    flex: 0.6;
+    background: var(--small-gradient-right);
+}
