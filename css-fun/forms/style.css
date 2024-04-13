@@ -1,0 +1,51 @@
+/* * {
+    padding: 10px;
+    margin: 0;
+} */
+
+.gradient-border {
+    background: linear-gradient(to left, white, lightgrey, white, white, white, white, white, lightgrey, white);
+    padding-bottom: 2px;
+    margin: 0;
+    width: 90%;
+    margin: auto;
+}
+
+.wrapper {
+    padding: 100px;
+    background: white;
+}
+
+.wrapper > * {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.gradient-border:last-of-type {
+    background: none;
+}
+
+legend {
+    border: solid 2px;
+    padding: 10px;
+    margin: 20px;
+}
+
+fieldset {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset > * {
+    padding: 5px;
+    margin: 0;
+}
+
+[type="text"],
+[type="select"],
+[type="email"],
+[type="tel"] {
+    max-width: 15%;
+}
