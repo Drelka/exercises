@@ -1,0 +1,22 @@
+li {
+    list-style: none;
+}
+
+#fieldset-3 label {
+    display: inline-block;
+    min-width: 120px;
+    text-align: rigth;
+    padding-top: 3px;
+}
+
+fieldset {
+    margin-bottom: 30px;
+}
+
+#fieldset-3 > ul > :last-child {
+    padding: 20px 0 0 20px;
+}
+
+#search {
+    padding: 5px 10px;
+}
