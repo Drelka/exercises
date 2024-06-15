@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+html {
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000;
+}
+
+#main-flex {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid orange;
+}
+
+.grids {
+    height: 700px;
+    border: 5px solid orange;
+    display: grid;
+    /* grid-template-rows: 200px 200px; */
+    /* grid-template-columns: 300px 300px; */
+    /* SHORTHAND BELOW */
+    grid-template: 200px 200px / 300px 300px;
+    gap: 10px;
+    /* this is in case of extra content, like item-5 */
+    grid-auto-rows: 100px;
+    grid-auto-flow: row; /* adds new item in the next row
+                            DON'T create new columns */
+    
+}
+
+.grid-1 > div {
+    border: 1px solid #000;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
