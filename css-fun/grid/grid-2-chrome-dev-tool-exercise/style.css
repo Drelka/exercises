@@ -89,5 +89,6 @@ p {
 }
 
 .item-10 {
-    grid-column: 3 / 6;
+    grid-column: -1 / -2;
+    grid-row: -2 / 8;
 }
