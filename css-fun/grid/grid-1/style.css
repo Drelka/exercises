@@ -21,28 +21,62 @@ html {
     border: 5px solid orange;
 }
 
+.whole {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
 .grids {
     height: 700px;
-    border: 5px solid orange;
+    border: 1px solid rgba(50, 60, 156, 0.397);
+    padding: 5px;
     display: grid;
+    /* examples: */
     /* grid-template-rows: 200px 200px; */
     /* grid-template-columns: 300px 300px; */
+}
+
+.grid-a {
     /* SHORTHAND BELOW */
     grid-template: 200px 200px / 300px 300px;
     gap: 10px;
     /* this is in case of extra content, like item-5 */
     grid-auto-rows: 100px;
     grid-auto-flow: row; /* adds new item in the next row
-                            DON'T create new columns */
-    
+                            DOESN'T create new columns */
 }
 
 .grid-1 > div {
+    border: 3px dotted #000000b2;
+    background-color: rgb(118, 175, 197);
+}
+
+.grid-b {
+    grid-template: 100px 100px 100px  / 130px 130px 130px 130px 130px 130px 300px;
+}
+
+.grid-2 {
+    background-color: bisque;
+}
+
+.inner-grid-1 {
+    display: grid;
     border: 1px solid #000;
+    grid-template: 100px / 100px 100px 100px;
+}
+
+.inner-grid-1 div:nth-child(-n + 2) {
+    /* border-right: 1px solid #000; */
+}
+
+.inner-grid-1 > div {
 }
 
 .item {
+    /* padding: 5px; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
