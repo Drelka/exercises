@@ -11,14 +11,19 @@ body {
 }
 
 .grid {
-    margin: 40px;
     height: 100vh;
     display: grid;
-    grid-template: [row1-start] minmax(100px, 150px) [row1-end row2-start] minmax(100px, 200px) [row2-end row3-start] minmax(100px, 10%) [row3-end row4-start] minmax(150px, 20%) [row4-end row5-start] minmax(50px, 15%) [row5-end]
-                    / [col1-start] clamp(50px, 15%, 150px) [col1-end col2-start] clamp(70px, 20%, 200px) [col2-end col3-start] clamp(100px, 25%, 220px) [col3-end col4-start] minmax(150px, 200px) [col4-end] 70px 30px 70px 70px;
+    grid: [row1-start] minmax(100px, 150px) [row1-end row2-start] minmax(100px, 200px) [row2-end row3-start] minmax(100px, 10%) [row3-end row4-start]
+                            minmax(150px, 20%) [row4-end row5-start] minmax(50px, 15%) [row5-end]
+                    / [col1-start] clamp(50px, 15%, 150px) [col1-end col2-start] clamp(70px, 20%, 200px) [col2-end col3-start]
+                            clamp(100px, 25%, 220px) [col3-end col4-start] minmax(150px, 200px) [col4-end] 70px 30px 70px 70px;
+    grid-auto-columns: 20px;
     grid-auto-rows: 150px;
     gap: 6px 10px;
-    justify-content: space-around;
+    place-content: center;
+    grid-template-areas: "one one"
+                        "one one";
+    margin-bottom: 50px;
 }
 
 .item {
@@ -28,5 +33,58 @@ body {
 }
 
 .item-1 {
-    grid-area: 1 / 1 / 3 / 3;
+    grid-area: one;
+}
+
+.item-21 {
+    grid-area: 5/8/6/11;
+}
+
+.item-37 {
+    grid-area: 2/4/5/8;
+}
+
+.item-35 {
+    grid-column: span 5;
+}
+
+.item-36 {
+    grid-column: span 4;
+}
+
+.grid > .item:nth-child(2n + 1) {
+    color: #fff;
+    background-color: #000;
+}
+
+.grid > .item:nth-child(4n) {
+    color: burlywood;
+    background-color: teal;
+}
+
+.grid > .item:nth-child(4n + 2) {
+    color: blanchedalmond;
+    background-color: blue;
+}
+
+.grid > .item:nth-child(3n + 2) {
+    color: yellow;
+    background-color: violet;
+}
+
+.grid > .item:nth-child(4n + 3) {
+    color: aquamarine;
+    background-color: brown;
+}
+
+.grid-2 {
+    height: 800px;
+    display: grid;
+    grid: [row1-start] "header header header" 1fr [row1-end]
+        [row2-start] "footer footer footer" 25px [row2-end]
+        / auto 50px auto;
+}
+
+.item-x {
+    border: 1px solid #000;
 }
