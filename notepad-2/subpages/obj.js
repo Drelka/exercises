@@ -54,3 +54,26 @@ function gameOver(winningPlayer) {
     console.log(winningPlayer.name + " is the winner.");
 }
 
+
+// good example of using an object is an item in a shopping basket:
+
+const braeburnApple ={
+    type: "fruit",
+    variety: "braeburn",
+    averageWeightInGrams : 220,
+    pricePerKg: 2.2,
+}
+
+
+// *** *** OBJECT CONSTRUCTORS *** ***
+// used when you have
+
+
+
+
+
+
+
+
+//   EXERCISE:
+
