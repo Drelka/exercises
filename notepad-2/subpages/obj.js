@@ -65,15 +65,62 @@ const braeburnApple ={
 }
 
 
+
+
 // *** *** OBJECT CONSTRUCTORS *** ***
-// used when you have
+// used when you want to "duplicate" the object (like a player, for example)
 
+function Player(name, marker) {
+    this.name = name;
+    this.marker = marker;
+}
 
+// call the function with the keyword "new"
 
+const player3 = new Player("Greg", "X");
+console.log(player3.name); // "Greg"
+
+// you can add functions to the object:
+
+function PlayerX(name, marker) {
+    this.name = name;
+    this.marker = marker;
+    this.sayName = function () {
+        console.log(this.name)
+    };
+}
+
+const player4 = new Player("Marry", "F");
+const player5 = new Player("Flea", "G");
+player4.sayName(); // "Marry"
+player5.sayName(); // "Flea"
 
 
 
 
 
 //   EXERCISE:
+// constructor for making "Book" objects:
+
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.readOrNot = function() {
+        if (read = "no" || "not") {
+            return ", not read yet";
+        } else if (read = "yes"){
+            return ", read already";
+        } else {
+            return "";
+        };
+    }
+    this.description = function() {
+        return `${title} by ${author}, ${pages} pages${readOrNot}`
+    }
+}
+
+const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", "295", "no");
+
 
