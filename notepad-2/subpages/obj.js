@@ -2,7 +2,7 @@
 
 const myObject = {
     property: "value",
-    "other property": function(x, y){
+    "other property": function (x, y) {
         return x + y;
     }
 };
@@ -57,10 +57,10 @@ function gameOver(winningPlayer) {
 
 // good example of using an object is an item in a shopping basket:
 
-const braeburnApple ={
+const braeburnApple = {
     type: "fruit",
     variety: "braeburn",
-    averageWeightInGrams : 220,
+    averageWeightInGrams: 220,
     pricePerKg: 2.2,
 }
 
@@ -107,17 +107,17 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.readOrNot = function() {
+    this.readOrNot = function () {
         if (read = "no" || "not") {
             return ", not read yet";
-        } else if (read = "yes"){
+        } else if (read = "yes") {
             return ", read already";
         } else {
             return "";
         };
     }
-    this.description = function() {
-        return `${title} by ${author}, ${pages} pages${readOrNot}`
+    this.description = function () {
+        return `${title} by ${author}, ${pages} pages${readOrNot}`;
     }
 }
 
