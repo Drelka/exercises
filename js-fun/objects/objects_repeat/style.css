@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 
 html {
@@ -14,14 +14,29 @@ html {
     flex-direction: row;
 }
 
-#div-papa {
-    display: flex;
+body {
+    text-align: center;
 }
 
-body {
+#div-mama {
+    display: grid;
+    grid-template: ???;
+    /* need to make changes here, grid reminder? */
+}
+
+#div-papa {
+    width: 50vw;
+    height: 70vh;
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    border: 3px solid #000;
+}
+
+#div-papa > div {
+    border-right: 3px solid #000;
+}
+
+#div-papa > div:last-child {
+    border: none;
 }
 
 p {
@@ -47,10 +62,4 @@ p {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
-
-#div-papa {
-    width: 50vw;
-    height: 70vh;
-    /* text-align: center; */
 }
