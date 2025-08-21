@@ -107,20 +107,20 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.readOrNot = function () {
-        if (read = "no" || "not") {
+    const readOrNot = function (read) {
+        if (read === "no" || read === "not") {
             return ", not read yet";
-        } else if (read = "yes") {
+        } else if (read === "yes") {
             return ", read already";
         } else {
             return "";
         };
     }
     this.description = function () {
-        return `${title} by ${author}, ${pages} pages${readOrNot}`;
+        return `${this.title} by ${this.author}, ${this.pages} pages${readOrNot(this.read)}`;
     }
 }
 
 const theHobbit = new Book("The Hobbit", "J.R.R. Tolkien", "295", "no");
 
-
+theHobbit.description();
