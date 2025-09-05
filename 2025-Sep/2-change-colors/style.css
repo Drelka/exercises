@@ -41,7 +41,7 @@ body {
     color: black;
 }
 
-.switch {
+.change {
     font-size: 22px;
     padding: 10px;
     margin-left: 222px;
@@ -49,12 +49,12 @@ body {
     border: 3px solid #000;
 }
 
-.switch:hover {
+.change:hover {
     background-color: aquamarine;
     cursor: pointer;
 }
 
-.switch:active {
+.change:active {
     background-color: rgb(98, 196, 163);
     border: 3px double #000;
 }
