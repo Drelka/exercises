@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    border: 1px solid #000;
+}
+
+.top .right,
+.bottom .left {
+    background-color: black;
+    color: white;
+}
+
+.top .left,
+.bottom .right {
+    background-color: white;
+    color: black;
+}
