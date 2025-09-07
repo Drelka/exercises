@@ -17,9 +17,29 @@ body {
 #one {
     padding: 50px;
     display: grid;
-    grid-template: 1fr 1fr /  200px;
+    grid-template: repeat(2, 1fr) /  200px;
+    row-gap: 10px;
+    /* justify-items: center; */
+    align-items: center;
+}
+
+#confirmButton{
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 10px;
+}
+
+label[for="#age"] {
+    grid-column: span 2;
 }
 
 #age {
+    /* max-width: 200px; */
+    text-align: center;
     padding: 10px;
+    border: 3px solid cornflowerblue;
+    border-radius: 10px;
+}   
+
+#result {
+    grid-area: 3/1/4/3;
 }
