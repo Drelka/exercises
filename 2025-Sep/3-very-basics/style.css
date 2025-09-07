@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#one {
+    padding: 50px;
+    display: grid;
+    grid-template: 1fr 1fr /  200px;
+}
+
+#age {
+    padding: 10px;
+}
