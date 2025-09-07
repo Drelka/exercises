@@ -1,22 +1,21 @@
 const age = document.querySelector("#age");
 const result = document.querySelector("#result");
-
-const ageVerified = "Age verification complete.";
-// const ageLow = alert("Your age is too low. Sorry.");
+const confirmButton = document.querySelector("#confirmButton");
 
 function ageResult(input) {
     if (input >= 18) {
-        return ageVerified;
+        return "Age verification complete.";
     } else {
-        return alert("Your age is too low. Sorry.");
+        alert("Your age is too low.\nYou are now being redirected.");
+        window.location.href = "http://www.google.com/";
     }
 }
 
-age.addEventListener("change", ()=> {
+confirmButton.addEventListener("click", ()=> {
     const input = parseInt(age.value);
     if(isNaN(input)) {
         result.textContent = "Please use only digts to represent you age.";
     } else {
         result.textContent = ageResult(input);
     }
-})
+});
