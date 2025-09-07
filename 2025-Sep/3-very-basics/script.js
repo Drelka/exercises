@@ -12,8 +12,8 @@ function ageResult(input) {
 }
 
 confirmButton.addEventListener("click", ()=> {
-    const input = parseInt(age.value);
-    if(isNaN(input)) {
+    const input = Number(age.value);
+    if(Number.isNaN(input)) {
         result.textContent = "Please use only digts to represent you age.";
     } else {
         result.textContent = ageResult(input);
