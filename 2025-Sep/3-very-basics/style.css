@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url(./custom-pointers/arrowhead-rounded-outline.png) 12 12, pointer;
+    /* font-size: 20px; */
 }
 
 html {
@@ -12,33 +14,51 @@ html {
 body {
     height: 100%;
     width: 100%;
+    user-select: none;
 }
+
+
 
 #one {
     padding: 50px;
     display: grid;
     grid-template: repeat(2, 1fr) /  200px;
-    row-gap: 10px;
+    grid-auto-columns: 200px;
+    grid-auto-rows: 1fr;
+    grid-gap: 10px 20px;
     /* justify-items: center; */
     align-items: center;
-}
-
-#confirmButton{
-    grid-area: 2 / 2 / 3 / 3;
-    padding: 10px;
 }
 
 label[for="#age"] {
     grid-column: span 2;
 }
 
+#confirmButton{
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 10px;
+    border: 3px solid cornflowerblue;
+    border-radius: 10px;
+    background-color: none;
+}
+
+    #confirmButton:active,
+    #confirmButton:focus-visible {
+        border-color: rgb(49, 94, 177);
+        outline: rgb(49, 94, 177);
+    }
+
 #age {
-    /* max-width: 200px; */
     text-align: center;
     padding: 10px;
     border: 3px solid cornflowerblue;
     border-radius: 10px;
-}   
+}
+
+    #age:focus-visible {
+        border-color: rgb(49, 94, 177);
+        outline: rgb(49, 94, 177);
+    }
 
 #result {
     grid-area: 3/1/4/3;
