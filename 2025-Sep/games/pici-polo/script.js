@@ -12,12 +12,23 @@ const randomNum = function() {
     return Math.floor(Math.random() * 100);
 }
 
-gregsNum = randomNum();
+const borderFade = function(element) {
+    clearTimeout(element.borderFadeTimeout);
+    element.classList.add("fading-red-border");
+    element.borderFadeTimeout = setTimeout(() => {
+        element.classList.remove("fading-red-border");
+    }, 100);
+}
 
+gregsNum = randomNum();
 
 const checkNumber = function(numberX) {
     const num = numberX.value;
-    if (num <= 100 && num > 0) {
+    if (givenNum.textContent = "") {
+        borderFade(givenNum);
+        return;
+    }
+    else if (num <= 100 && num > 0) {
         if (num > gregsNum) {
             if (num - gregsNum >= 20) {
                 return "Far too high.";
@@ -38,7 +49,8 @@ const checkNumber = function(numberX) {
             return "You got it right!";
         }
     } else {
-        return "Choose number from 1 to 100."
+        borderFade(msg);
+        return "Choose a number from 1 to 100."
     }
 };
 
