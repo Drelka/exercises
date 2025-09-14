@@ -7,6 +7,7 @@ const checkButton = document.querySelector("#start");
 const givenNumInput = document.querySelector("#given-number");
 const msg = document.querySelector("#message");
 const revealNum = document.querySelector("#greg > p");
+const inputHistory = document.querySelector("#inputHistory");
 
 const randomNum = function() {
     return Math.floor(Math.random() * 100) + 1;
@@ -17,28 +18,39 @@ const borderFade = function(element) {
     element.classList.add("red-border-flash");
     element.borderFadeTimeout = setTimeout(() => {
         element.classList.remove("red-border-flash");
-    }, 300);
+    }, 600);
 }
 
-gregsNum = randomNum();
+const gregsNum = randomNum();
 
-const checkNumber = function(numberX) {
-    const num = parseInt(numberX.value);
-    if (num == "") {
+const addToHistory = function(confirmedInput) {
+    const li = document.createElement("li");
+    li.textContent = confirmedInput;
+    inputHistory.appendChild(li);
+}
+
+const checkNumber = function() {
+    
+    const inputValue = givenNumInput.value;
+    const num = parseInt(inputValue);
+
+    if (inputValue.trim() === "") {
         borderFade(givenNumInput);
         msg.textContent = "Please enter a number.";
         return;
-    }
-    else if (num > 100 || num < 1) {
+    } else if (isNaN(num) || num > 100 || num < 1) {
         borderFade(msg);
         msg.textContent = "Choose a number from 1 to 100.";
         return;
     }
-    else if (num > gregsNum) {
+    
+    addToHistory(num);
+
+    if (num > gregsNum) {
         if (num - gregsNum >= 20) {
             msg.textContent = "Far too high.";
         } else if (num - gregsNum < 5) {
-            msg.textContent = "Close, but little too high.";
+            msg.textContent = "Close, but a little too high.";
         } else {
             msg.textContent = "Number too high.";
         }
@@ -48,14 +60,15 @@ const checkNumber = function(numberX) {
         } else if (gregsNum - num < 5) {
             msg.textContent = "Too low, but very close.";
         } else {
-            msg.textContent = "Number too high.";
+            msg.textContent = "Number too low.";
         }
     } else {
         msg.textContent = "You got it right!";
+        revealNum.textContent = gregsNum;
+        revealNum.style.border = "3px solid green";
     }
 };
 
-
 checkButton.addEventListener("click", e => {
-    checkNumber(givenNumInput);
+    checkNumber();
 });
