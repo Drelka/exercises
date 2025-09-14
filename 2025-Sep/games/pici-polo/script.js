@@ -16,15 +16,15 @@ const borderFade = function(element) {
     clearTimeout(element.borderFadeTimeout);
     element.classList.add("red-border-flash");
     element.borderFadeTimeout = setTimeout(() => {
-        element.classList.remove("fading-red-border");
-    }, 1);
+        element.classList.remove("red-border-flash");
+    }, 300);
 }
 
 gregsNum = randomNum();
 
 const checkNumber = function(numberX) {
-    const num = numberX.value;
-    if (num === "") {
+    const num = parseInt(numberX.value);
+    if (num == "") {
         borderFade(givenNumInput);
         msg.textContent = "Please enter a number.";
         return;
