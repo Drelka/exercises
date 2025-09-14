@@ -21,7 +21,7 @@ const borderFade = function(element) {
     }, 600);
 }
 
-const gregsNum = randomNum();
+let gregsNum = randomNum();
 
 const addToHistory = function(confirmedInput) {
     const li = document.createElement("li");
@@ -30,7 +30,7 @@ const addToHistory = function(confirmedInput) {
 }
 
 const checkNumber = function() {
-    
+
     const inputValue = givenNumInput.value;
     const num = parseInt(inputValue);
 
@@ -66,9 +66,25 @@ const checkNumber = function() {
         msg.textContent = "You got it right!";
         revealNum.textContent = gregsNum;
         revealNum.style.border = "3px solid green";
+        checkButton.textContent = "RESET";
+        checkButton.removeEventListener("click", checkNumber);
+        checkButton.addEventListener("click", resetButton);
     }
 };
 
-checkButton.addEventListener("click", e => {
-    checkNumber();
-});
+const resetButton = function() {
+
+    givenNumInput.value = "";
+    msg.textContent = "Choose a number from 1 to 100.";
+    revealNum.textContent = "?";
+    revealNum.style.border = "1px solid black";
+    inputHistory.textContent = "";
+    checkButton.textContent = "CHECK";
+
+    checkButton.removeEventListener("click", resetButton);
+    checkButton.addEventListener("click", checkNumber);
+
+    gregsNum = randomNum();
+}
+
+checkButton.addEventListener("click", checkNumber);
