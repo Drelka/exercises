@@ -9,32 +9,43 @@
 <body>
     
 
+<h3>Add book to your collection:</h3>
 <div id="book-saver">
-    <div id="add book"></div>
-        <h3>Add book to your collection:</h3>
+    <div id="add-book">
         <form action="">
             <ul>
-                <li id="question-1">
-                    <label for="#title">Title:</label>
-                        <input type="text" id="title">
+                <li class="question" id="question-1">
+                    <label for="#title">Title</label>
+                    <input type="text" id="title">
                 </li>
-                <li id="question-2">
-                    <label for="#author">Author:</label>
-                        <input type="text" id="author">
+                <li class="question" id="question-2">
+                    <label for="#author">Author</label>
+                    <input type="text" id="author">
                 </li>
-                <li id="question-3">
-                    <label for="#pages">Pages:</label>
-                        <input type="number" id="pages">
+                <li class="question" id="question-3">
+                    <label for="#pages">Pages</label>
+                    <input type="number" id="pages">
                 </li>
-                <li id="question-4">
+                <li class="question" id="question-4">
                     <p>Have you read this book?</p>
-                    <input type="radio" id="read" name="was_it_read" value="Yes">
-                    <label for="#read">Yes</label>
-                    <input type="radio" id="read" name="was_it_read" value="No">
-                    <label for="#read">No</label>
+                    <label for="Yes">
+                        <div class="yes">
+                            <input type="radio" id="Yes" name="was_it_read" value="Yes">
+                        </div>
+                        &nbsp; Yes
+                    </label>
+                    <label for="No">
+                        <div class="no">
+                            <input type="radio" id="No" name="was_it_read" value="No">
+                        </div>
+                        &nbsp; No
+                    </label>
                 </li>
             </ul>
+            <button id="add-book-btn"> + ADD BOOK </button>
         </form>
+    </div>
+    <div class="in-the-middle" id="books"><p>*** Empty ***</p></div>
 </div>
 
 
