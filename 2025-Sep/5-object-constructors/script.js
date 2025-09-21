@@ -13,42 +13,49 @@
 // 5. add toggle button in the corner of the each book "square" to swap between the classic look and the object representation
 
 
-const title = document.querySelector("#title");
-const author = document.querySelector("#author");
-const pages = document.querySelector("#pages");
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pagesInput = document.querySelector("#pages");
 const Yes = document.querySelector("#Yes");
 const No = document.querySelector("#No");
 const btn = document.querySelector("#btn");
 const books = document.querySelector("#books");
 
+let myLibrary = [];
 
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.info = function() {
+        return `"${this.title}" by ${this.author}, ${pages} pages, ${read}.`;
+    }
+}
 
 const checkInputs = function() {
-    let message = ""
+    let message = "";
 
-    const space = function() {
-        if(message != "") {message += " ";}
-    }
+    const space = function() {if(message != "") {message += " ";}}
 
-    if (title.value.trim() === ""){
+    if (titleInput.value.trim() === ""){
         message += "Title missing.";
     }
-    if (author.value.trim() === "") {
+    if (authorInput.value.trim() === "") {
         space();
         message += "Author missing.";
-    } else if (/\d/.test(toString(author.value)) === true) {
+    } else if (/\d/.test(toString(authorInput.value)) === true) {
         space();
         message += "No numbers allowed in the authors name.";
     }
-    if (isNaN(parseInt(pages.value))) {
+    if (isNaN(parseInt(pagesInput.value))) {
         space();
         message += "Only numbers allowed for pages.";
     }
     if (!Yes.checked && !No.checked) {
         space();
-        message += "Please check the \"Have you read this book?\" option."
+        message += "Please check the \"Have you read this book?\" option.";
     }
-
 
     if (message !== "") {
         alert(message);
@@ -59,18 +66,26 @@ const checkInputs = function() {
 
 }
 
-const correctInputs = function() {
-    
+const addToLibrary = function() {
+    const title = titleInput.value;
+    const author = authorInput.value;
+    const pages = pagesInput.value;
+    const read = Yes.checked ? "book read" : "not read yet";
+
+    const newBook = new Book(title, author, pages, read);
+
+    myLibrary.push(newBook);
+
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    Yes.checked = false;
+    No.checked = false;
 }
 
 btn.addEventListener("click", function(e) {
     e.preventDefault();
 
-    if((checkInputs) === true) {
-        return;
-    } else {
-        alert("Please make sure inputs are right.");
-        wrongInputs();
-    };
+    if (checkInputs()) { addToLibrary(); };
 });
 
