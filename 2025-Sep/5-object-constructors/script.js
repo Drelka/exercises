@@ -83,9 +83,26 @@ const addToLibrary = function() {
     No.checked = false;
 }
 
+const printBook = function() {
+    myLibrary.forEach((book, index)) => {
+        const bookDiv = documwent.createElement('div');
+        bookDiv.classList.add("book-card");
+
+        bookDiv.innerHTML =`
+        <h3>Title: ${book.title}</h3>
+        <p>Author: ${book.author}</p>
+        <p>Pages: ${book.pages}</p>
+        <p>Read: ${book.read}</p>
+        `;
+    }
+}
+
 btn.addEventListener("click", function(e) {
     e.preventDefault();
 
-    if (checkInputs()) { addToLibrary(); };
+    if (checkInputs()) {
+        addToLibrary();
+        printBook();
+    }
 });
 
