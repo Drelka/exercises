@@ -69,14 +69,15 @@ const newlyCreatedObject = {objName, objAge, objHeight};
 // DESTRUCTURING and object to extract it's values:
 
 const obj = {x: "abc", y: 5};
-
 const {a, b} = obj;
+
 // EXTRACTS two variables:
 // const a = obj.a;
 // const b = obj.b;
 
 const arrayA = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const [zerothElement, firstElement, secondElement] = arrayA;
+
 // EXTRACTS three elements of the first three indexes - 0, 1, 2:
 // zerothElement = 1;
 // firstElement = 2;
