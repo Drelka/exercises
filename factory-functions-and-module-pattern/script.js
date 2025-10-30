@@ -45,7 +45,7 @@ const User = function(name) {
 
 // REFACTORED into a FACTORY FUNCTION:
 
-function createUser(name) {
+function createDiscordUser(name) {
     const discordName = "@" + name;
     return {name, discordName};
 }
@@ -83,6 +83,58 @@ const [zerothElement, firstElement, secondElement] = arrayA;
 // firstElement = 2;
 // secondElement = 3;
 
+
+
+// ---------------------------------------------------------------
+
+
+// PRIVATE VARIABLES AND FUNCTIONS
+
+function createUser(name) {
+    const discordName = "@" + name;
+    
+    let reputation = 0;
+    const getReputation = () => reputation;
+    const giveReputation = () => reputation++;
+    
+    return {name, discordName, getReputation, giveReputation};
+}
+
+const josh = createUser("josh");
+josh.giveReputation;
+josh.giveReputation;
+
+console.log({
+    discordName: josh.discordName;
+    reputation: josh.getReputation();
+});
+
+// output:
+// {discordName: "@josh", reputation: 2}
+
+
+// ---------------------------------------------------------------
+
+
+// "extending" createUser into createPlayer factory, adding new metrics - level
+
+function createPlayer(name, level) {
+    // deconstructing, getting values
+    const {getReputation, giveReputation} = createUser(name);
+    
+    // returning excracted values + new values
+    const increaseLevel = () => level++;
+    return {name, getReputation, giveReputation, increaseLevel};
+}
+
+// Object.assign method in use:
+
+function createPlayer(name, level) {
+    const user = createUser(name);
+
+    const increaseLevel = () => level++;
+    return Object.assign({}, user, {increaseLevel});
+}
 
 
 // ---------------------------------------------------------------
